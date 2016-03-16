@@ -1,0 +1,35 @@
+{
+  "name": "nosj",
+  "version": "1.0.0",
+  "description": "JSON serializer and deserializer for simple JSON objects.",
+  "license": "MIT",
+  "repository": "blainsmith/nosj",
+  "author": {
+    "name": "Blain Smith",
+    "email": "rebelgeek@blainsmith.com",
+    "url": "blainsmith.com"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "xo && ava"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "json",
+    "stringify",
+    "parse",
+    "serialize",
+    "deserialize",
+    "serializer",
+    "deserializer"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "ava": "^0.8.0",
+    "xo": "^0.12.1"
+  }
+}
