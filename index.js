@@ -8,7 +8,7 @@ function deserialize(string, options) {
 	options = options || {stringToDates: true};
 
 	function formatter(key, value) {
-		let newValue;
+		var newValue;
 		if (options.stringToDates && typeof value === 'string' && !isNaN(Date.parse(value))) {
 			newValue = new Date(value);
 		} else {
