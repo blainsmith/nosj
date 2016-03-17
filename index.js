@@ -2,7 +2,8 @@
 
 function serialize(object) {
 	function replacer(key, value) {
-		if (value instanceof Date) {
+		if (typeof value === 'string' && !isNaN(Date.parse(value))) {
+			value = new Date(value);
 			value = value.toString();
 		}
 		return value;
