@@ -5,7 +5,7 @@ const object = {
 	string: 'hello',
 	number: 13,
 	float: 3.14,
-	date: new Date('01/13/1982'),
+	date: new Date('Wed Jan 13 1982 00:00:00 GMT-0500 (EST)'),
 	array: [
 		{a: 'a'},
 		{b: 'b'}
@@ -20,7 +20,7 @@ const objectStringDates = {
 	string: 'hello',
 	number: 13,
 	float: 3.14,
-	date: '1982-01-13T05:00:00.000Z',
+	date: 'Wed Jan 13 1982 00:00:00 GMT-0500 (EST)',
 	array: [
 		{a: 'a'},
 		{b: 'b'}
@@ -31,7 +31,7 @@ const objectStringDates = {
 	}
 };
 
-const string = '{"string":"hello","number":13,"float":3.14,"date":"1982-01-13T05:00:00.000Z","array":[{"a":"a"},{"b":"b"}],"object":{"x":"x","y":"y"}}';
+const string = '{"string":"hello","number":13,"float":3.14,"date":"Wed Jan 13 1982 00:00:00 GMT-0500 (EST)","array":[{"a":"a"},{"b":"b"}],"object":{"x":"x","y":"y"}}';
 
 test('serialize', t => {
 	t.is(nosj.serialize(object), string);
