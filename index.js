@@ -1,13 +1,20 @@
 'use strict';
 
 function serialize(object) {
-	return JSON.stringify(object);
+	function replacer(key, value) {
+		if (value instanceof Date) {
+			value = value.toString();
+		}
+		return value;
+	}
+
+	return JSON.stringify(object, replacer);
 }
 
 function deserialize(string, options) {
 	options = options || {stringToDates: true};
 
-	function formatter(key, value) {
+	function replacer(key, value) {
 		var newValue;
 		if (options.stringToDates && typeof value === 'string' && !isNaN(Date.parse(value))) {
 			newValue = new Date(value);
@@ -17,7 +24,7 @@ function deserialize(string, options) {
 		return newValue;
 	}
 
-	return JSON.parse(string, formatter);
+	return JSON.parse(string, replacer);
 }
 
 module.exports = {
