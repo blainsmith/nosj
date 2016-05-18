@@ -1,6 +1,6 @@
 {
   "name": "nosj",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "JSON serializer and deserializer for simple JSON objects.",
   "license": "MIT",
   "repository": "blainsmith/nosj",
