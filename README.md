@@ -63,7 +63,7 @@ nosj.deserialize(string);
 Type: `boolean`  
 Default: `true`
 
-Attempt to convert all strings to dates. If successful, then the property will be a `Date` object. Set option to `false` to keep all strings as string and do not attempt to convert to dates.
+Convert all [ISO 8601](https://www.w3.org/TR/NOTE-datetime) date formatted strings to a `Date`.
 
 
 ## License

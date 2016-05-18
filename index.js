@@ -4,7 +4,7 @@ const ISO8601_DATE_REGEX = /^([\+-]?\d{4}(?!\d{2}\b))((-?)((0[1-9]|1[0-2])(\3([1
 
 function serialize(object) {
 	function replacer(key, value) {
-		if (typeof value === 'string' && value.match(ISO8601_DATE_REGEX) && !isNaN(Date.parse(value))) {
+		if (typeof value === 'string' && value.match(ISO8601_DATE_REGEX)) {
 			value = new Date(value);
 			value = value.toISOString();
 		}
@@ -19,7 +19,7 @@ function deserialize(string, options) {
 
 	function replacer(key, value) {
 		var newValue;
-		if (options.stringToDates && typeof value === 'string' && value.match(ISO8601_DATE_REGEX) && !isNaN(Date.parse(value))) {
+		if (options.stringToDates && typeof value === 'string' && value.match(ISO8601_DATE_REGEX)) {
 			newValue = new Date(value);
 		} else {
 			newValue = value;
