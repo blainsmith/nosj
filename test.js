@@ -44,6 +44,11 @@ test('serialize', t => {
 });
 
 test('deserialize', t => {
-	t.same(nosj.deserialize(string), object);
-	t.same(nosj.deserialize(string, {stringToDates: false}), objectStringDates);
+	t.deepEqual(nosj.deserialize(string), object);
+	t.deepEqual(nosj.deserialize(string, {stringToDates: false}), objectStringDates);
+});
+
+test('serialize-deserialize', t => {
+	t.deepEqual(object, nosj.deserialize(nosj.serialize(object)));
+	t.deepEqual(objectStringDates, nosj.deserialize(nosj.serialize(objectStringDates), {stringToDates: false}));
 });
